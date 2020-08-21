@@ -1,2 +1,2 @@
 # pengyhash
-Non-cryptographic hash algorithm
+Fast 64-bit non-cryptographic hash algorithm
