@@ -16,7 +16,7 @@ uint64_t pengyhash(const void *p, size_t size, uint32_t seed)
 
 	memcpy(b, p, size);
 
-	for(int i = 0; i < 6; i++) {
+	for(i = 0; i < 6; i++) {
 		s[1] = (s[0] += (s[1] += b[1]) + b[0]) ^ (s[1] << 14 | s[1] >> 50);
 		s[3] = (s[2] += (s[3] += b[3]) + b[2]) ^ (s[3] << 23 | s[3] >> 41);
 		s[3] = (s[0] += (s[3] += b[3]) + b[0]) ^ (s[3] << 16 | s[3] >> 48);
