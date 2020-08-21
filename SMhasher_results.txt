@@ -1,8 +1,3 @@
-No test hash given on command line, testing berthash.
-Usage: SMHasher [--list][--listnames][--tests] [--verbose][--extra]
-       [--test=Speed,...] hash
---- Testing berthash "berthash" GOOD
-
 [[[ Speed Tests ]]]
 
 Bulk speed test - 262144-byte keys
