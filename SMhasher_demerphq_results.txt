@@ -1,0 +1,486 @@
+ok 1 - Found Hash # pengyhash
+###################################################################
+### Testing pengyhash - no seed_state
+### - Alberto Fajardo - pengyhash -
+### seedbits: 64 statebits: 256 hashbits: 64
+###################################################################
+ok 2 - Verification code # pengyhash
+# pengyhash            - Verification value 0xFC4DFFE9 : Passed.
+### Sanity Tests ###
+# Sanity check simple key bit flips and consistency - hashbytes=8..........
+ok 3 - SanityTest # pengyhash
+# Sanity check null suffixes change the hash (simple)..........
+ok 4 - Appended Zeroes Test # pengyhash
+ok 5 - Sanity Test # pengyhash
+### Speed Tests ###
+## Bulk speed test - 262144-byte keys
+# Alignment  7 -  5.488 bytes/cycle - 15701.19 MiB/sec @ 3 ghz
+# Alignment  6 -  5.487 bytes/cycle - 15699.68 MiB/sec @ 3 ghz
+# Alignment  5 -  5.486 bytes/cycle - 15695.59 MiB/sec @ 3 ghz
+# Alignment  4 -  5.511 bytes/cycle - 15766.85 MiB/sec @ 3 ghz
+# Alignment  3 -  5.485 bytes/cycle - 15693.75 MiB/sec @ 3 ghz
+# Alignment  2 -  5.484 bytes/cycle - 15691.10 MiB/sec @ 3 ghz
+# Alignment  1 -  5.484 bytes/cycle - 15689.39 MiB/sec @ 3 ghz
+# Alignment  0 -  5.498 bytes/cycle - 15731.16 MiB/sec @ 3 ghz
+# Average      -  5.491 bytes/cycle - 15708.59 MiB/sec @ 3 ghz
+## KeySpeed tests
+# pengyhash                 0 byte keys       44.000 c/h
+# pengyhash                 1 byte keys       45.000 c/h       45.000 c/b        0.022 b/c
+# pengyhash                 2 byte keys       49.000 c/h       24.500 c/b        0.041 b/c
+# pengyhash                 3 byte keys       55.748 c/h       18.583 c/b        0.054 b/c
+# pengyhash                 4 byte keys       60.547 c/h       15.137 c/b        0.066 b/c
+# pengyhash                 5 byte keys       64.731 c/h       12.946 c/b        0.077 b/c
+# pengyhash                 6 byte keys       63.858 c/h       10.643 c/b        0.094 b/c
+# pengyhash                 7 byte keys       65.191 c/h        9.313 c/b        0.107 b/c
+# pengyhash                 8 byte keys       77.906 c/h        9.738 c/b        0.103 b/c
+# pengyhash                 9 byte keys       56.775 c/h        6.308 c/b        0.159 b/c
+# pengyhash                10 byte keys       54.998 c/h        5.500 c/b        0.182 b/c
+# pengyhash                11 byte keys       59.993 c/h        5.454 c/b        0.183 b/c
+# pengyhash                12 byte keys       64.999 c/h        5.417 c/b        0.185 b/c
+# pengyhash                13 byte keys       69.998 c/h        5.384 c/b        0.186 b/c
+# pengyhash                14 byte keys       63.000 c/h        4.500 c/b        0.222 b/c
+# pengyhash                15 byte keys       75.130 c/h        5.009 c/b        0.200 b/c
+# pengyhash                16 byte keys       83.232 c/h        5.202 c/b        0.192 b/c
+# pengyhash                17 byte keys       47.965 c/h        2.821 c/b        0.354 b/c
+# pengyhash                18 byte keys       49.402 c/h        2.745 c/b        0.364 b/c
+# pengyhash                19 byte keys       56.134 c/h        2.954 c/b        0.338 b/c
+# pengyhash                20 byte keys       61.542 c/h        3.077 c/b        0.325 b/c
+# pengyhash                21 byte keys       69.084 c/h        3.290 c/b        0.304 b/c
+# pengyhash                22 byte keys       64.979 c/h        2.954 c/b        0.339 b/c
+# pengyhash                23 byte keys       75.728 c/h        3.293 c/b        0.304 b/c
+# pengyhash                24 byte keys       85.551 c/h        3.565 c/b        0.281 b/c
+# pengyhash                25 byte keys       47.997 c/h        1.920 c/b        0.521 b/c
+# pengyhash                26 byte keys       52.998 c/h        2.038 c/b        0.491 b/c
+# pengyhash                27 byte keys       57.538 c/h        2.131 c/b        0.469 b/c
+# pengyhash                28 byte keys       64.000 c/h        2.286 c/b        0.438 b/c
+# pengyhash                29 byte keys       68.884 c/h        2.375 c/b        0.421 b/c
+# pengyhash                30 byte keys       71.742 c/h        2.391 c/b        0.418 b/c
+# pengyhash                31 byte keys       81.144 c/h        2.618 c/b        0.382 b/c
+#                          Average < 32       62.775 c/h        4.050 c/b        0.247 b/c
+# pengyhash                32 byte keys       43.000 c/h        1.344 c/b        0.744 b/c
+# pengyhash                36 byte keys       58.667 c/h        1.630 c/b        0.614 b/c
+# pengyhash                40 byte keys       80.272 c/h        2.007 c/b        0.498 b/c
+# pengyhash                44 byte keys       71.997 c/h        1.636 c/b        0.611 b/c
+# pengyhash                48 byte keys       86.209 c/h        1.796 c/b        0.557 b/c
+# pengyhash                52 byte keys       66.741 c/h        1.283 c/b        0.779 b/c
+# pengyhash                56 byte keys       89.174 c/h        1.592 c/b        0.628 b/c
+# pengyhash                60 byte keys       75.720 c/h        1.262 c/b        0.792 b/c
+# pengyhash                64 byte keys       48.987 c/h        0.765 c/b        1.306 b/c
+# pengyhash                68 byte keys       69.044 c/h        1.015 c/b        0.985 b/c
+# pengyhash                72 byte keys       90.497 c/h        1.257 c/b        0.796 b/c
+# pengyhash                76 byte keys       75.996 c/h        1.000 c/b        1.000 b/c
+# pengyhash                80 byte keys       90.354 c/h        1.129 c/b        0.885 b/c
+# pengyhash                84 byte keys       76.987 c/h        0.917 c/b        1.091 b/c
+# pengyhash                88 byte keys      104.038 c/h        1.182 c/b        0.846 b/c
+# pengyhash                92 byte keys       76.205 c/h        0.828 c/b        1.207 b/c
+# pengyhash                96 byte keys       54.803 c/h        0.571 c/b        1.752 b/c
+# pengyhash               100 byte keys       73.220 c/h        0.732 c/b        1.366 b/c
+# pengyhash               104 byte keys       85.678 c/h        0.824 c/b        1.214 b/c
+# pengyhash               108 byte keys       89.045 c/h        0.824 c/b        1.213 b/c
+# pengyhash               112 byte keys      109.463 c/h        0.977 c/b        1.023 b/c
+# pengyhash               116 byte keys       91.456 c/h        0.788 c/b        1.268 b/c
+# pengyhash               120 byte keys      119.951 c/h        1.000 c/b        1.000 b/c
+# pengyhash               124 byte keys       81.781 c/h        0.660 c/b        1.516 b/c
+#                         Average < 128       69.966 c/h        1.655 c/b        0.604 b/c
+# pengyhash               128 byte keys       61.000 c/h        0.477 c/b        2.098 b/c
+# pengyhash               256 byte keys       97.341 c/h        0.380 c/b        2.630 b/c
+# pengyhash               512 byte keys      143.663 c/h        0.281 c/b        3.564 b/c
+# pengyhash              1024 byte keys      235.410 c/h        0.230 c/b        4.350 b/c
+# pengyhash              2048 byte keys      422.940 c/h        0.207 c/b        4.842 b/c
+# pengyhash              4096 byte keys      802.025 c/h        0.196 c/b        5.107 b/c
+# pengyhash              8192 byte keys     1545.978 c/h        0.189 c/b        5.299 b/c
+# pengyhash             16384 byte keys     3032.174 c/h        0.185 c/b        5.403 b/c
+# pengyhash             32768 byte keys     6042.305 c/h        0.184 c/b        5.423 b/c
+# pengyhash             65536 byte keys    11988.000 c/h        0.183 c/b        5.467 b/c
+#                       Overall Average      428.620 c/h        0.212 c/b        4.713 b/c
+ok 6 - Speed (always passes) # pengyhash
+### Differential Tests ###
+# Testing 8303632 up-to-5-bit differentials in 64-bit keys -> 64 bit hashes.
+# 1000 reps, 8303632000 total tests, expecting 0.00 random collisions..........
+ok 7 - Differential collisions # pengyhash
+ok 8 - Nothing skipped during differential collision check # pengyhash
+# 0 total collisions, of which 0 single collisions were ignored
+ok 9 - ProcessDifferentials
+# Testing 11017632 up-to-4-bit differentials in 128-bit keys -> 64 bit hashes.
+# 1000 reps, 11017632000 total tests, expecting 0.00 random collisions..........
+ok 10 - Differential collisions # pengyhash
+ok 11 - Nothing skipped during differential collision check # pengyhash
+# 0 total collisions, of which 0 single collisions were ignored
+ok 12 - ProcessDifferentials
+# Testing 2796416 up-to-3-bit differentials in 256-bit keys -> 64 bit hashes.
+# 1000 reps, 2796416000 total tests, expecting 0.00 random collisions..........
+ok 13 - Differential collisions # pengyhash
+ok 14 - Nothing skipped during differential collision check # pengyhash
+# 0 total collisions, of which 0 single collisions were ignored
+ok 15 - ProcessDifferentials
+ok 16 - Differential # pengyhash
+### Avalanche Tests ### - seed-bits: 64 hash-bits: 64
+# Samples 400000, expected error 0.00064000, confidence level 99.99994267%
+# Testing   0-bit keys.......... ok.     # worst-bit:   0.694% error-ratio: 9.565194e-01
+ok 17 - Strict Avalanche Criteria - 0 bit/0 byte keys # pengyhash
+# Testing   8-bit keys.......... ok.     # worst-bit:   0.626% error-ratio: 9.918053e-01
+ok 18 - Strict Avalanche Criteria - 8 bit/1 byte keys # pengyhash
+# Testing  16-bit keys.......... ok.     # worst-bit:   0.578% error-ratio: 1.017047e+00
+ok 19 - Strict Avalanche Criteria - 16 bit/2 byte keys # pengyhash
+# Testing  24-bit keys.......... ok.     # worst-bit:   0.550% error-ratio: 9.980709e-01
+ok 20 - Strict Avalanche Criteria - 24 bit/3 byte keys # pengyhash
+# Testing  32-bit keys.......... ok.     # worst-bit:   0.575% error-ratio: 9.829182e-01
+ok 21 - Strict Avalanche Criteria - 32 bit/4 byte keys # pengyhash
+# Testing  40-bit keys.......... ok.     # worst-bit:   0.581% error-ratio: 1.014430e+00
+ok 22 - Strict Avalanche Criteria - 40 bit/5 byte keys # pengyhash
+# Testing  48-bit keys.......... ok.     # worst-bit:   0.643% error-ratio: 9.975197e-01
+ok 23 - Strict Avalanche Criteria - 48 bit/6 byte keys # pengyhash
+# Testing  56-bit keys.......... ok.     # worst-bit:   0.711% error-ratio: 9.968572e-01
+ok 24 - Strict Avalanche Criteria - 56 bit/7 byte keys # pengyhash
+# Testing  64-bit keys.......... ok.     # worst-bit:   0.691% error-ratio: 1.018430e+00
+ok 25 - Strict Avalanche Criteria - 64 bit/8 byte keys # pengyhash
+# Testing  72-bit keys.......... ok.     # worst-bit:   0.659% error-ratio: 9.931066e-01
+ok 26 - Strict Avalanche Criteria - 72 bit/9 byte keys # pengyhash
+# Testing  80-bit keys.......... ok.     # worst-bit:   0.669% error-ratio: 1.017057e+00
+ok 27 - Strict Avalanche Criteria - 80 bit/10 byte keys # pengyhash
+# Testing  88-bit keys.......... ok.     # worst-bit:   0.690% error-ratio: 9.933528e-01
+ok 28 - Strict Avalanche Criteria - 88 bit/11 byte keys # pengyhash
+# Testing  96-bit keys.......... ok.     # worst-bit:   0.599% error-ratio: 1.003335e+00
+ok 29 - Strict Avalanche Criteria - 96 bit/12 byte keys # pengyhash
+# Testing 104-bit keys.......... ok.     # worst-bit:   0.610% error-ratio: 1.009917e+00
+ok 30 - Strict Avalanche Criteria - 104 bit/13 byte keys # pengyhash
+# Testing 112-bit keys.......... ok.     # worst-bit:   0.649% error-ratio: 1.013880e+00
+ok 31 - Strict Avalanche Criteria - 112 bit/14 byte keys # pengyhash
+# Testing 120-bit keys.......... ok.     # worst-bit:   0.623% error-ratio: 9.843919e-01
+ok 32 - Strict Avalanche Criteria - 120 bit/15 byte keys # pengyhash
+# Testing 128-bit keys.......... ok.     # worst-bit:   0.611% error-ratio: 9.924908e-01
+ok 33 - Strict Avalanche Criteria - 128 bit/16 byte keys # pengyhash
+# Testing 136-bit keys.......... ok.     # worst-bit:   0.550% error-ratio: 1.023416e+00
+ok 34 - Strict Avalanche Criteria - 136 bit/17 byte keys # pengyhash
+# Testing 144-bit keys.......... ok.     # worst-bit:   0.609% error-ratio: 9.861879e-01
+ok 35 - Strict Avalanche Criteria - 144 bit/18 byte keys # pengyhash
+# Testing 152-bit keys.......... ok.     # worst-bit:   0.632% error-ratio: 9.794256e-01
+ok 36 - Strict Avalanche Criteria - 152 bit/19 byte keys # pengyhash
+# Testing 152-bit keys.......... ok.     # worst-bit:   0.602% error-ratio: 1.018657e+00
+ok 37 - Strict Avalanche Criteria - 152 bit/19 byte keys # pengyhash
+# Testing 200-bit keys.......... ok.     # worst-bit:   0.632% error-ratio: 9.958150e-01
+ok 38 - Strict Avalanche Criteria - 200 bit/25 byte keys # pengyhash
+# Testing 256-bit keys.......... ok.     # worst-bit:   0.693% error-ratio: 9.955784e-01
+ok 39 - Strict Avalanche Criteria - 256 bit/32 byte keys # pengyhash
+# Testing 520-bit keys.......... ok.     # worst-bit:   0.745% error-ratio: 1.006341e+00
+ok 40 - Strict Avalanche Criteria - 520 bit/65 byte keys # pengyhash
+# Testing 512-bit keys.......... ok.     # worst-bit:   0.668% error-ratio: 1.001745e+00
+ok 41 - Strict Avalanche Criteria - 512 bit/64 byte keys # pengyhash
+# Testing 1024-bit keys.......... ok.     # worst-bit:   0.728% error-ratio: 9.970225e-01
+ok 42 - Strict Avalanche Criteria - 1024 bit/128 byte keys # pengyhash
+# Testing 2048-bit keys.......... ok.     # worst-bit:   0.683% error-ratio: 9.967742e-01
+ok 43 - Strict Avalanche Criteria - 2048 bit/256 byte keys # pengyhash
+### Keyset 'Cyclic' Tests ###
+# Keyset 'Cyclic' - 8 cycles of 8 bytes - 10000000 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 44 - Collision Rate for Keyset 'Cyclic' - 8 cycles of 8 bytes - 10000000 keys
+ok 45 - Distribution Bias Check for Keyset 'Cyclic' - 8 cycles of 8 bytes - 10000000 keys
+# Keyset 'Cyclic' - 8 cycles of 9 bytes - 10000000 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 46 - Collision Rate for Keyset 'Cyclic' - 8 cycles of 9 bytes - 10000000 keys
+ok 47 - Distribution Bias Check for Keyset 'Cyclic' - 8 cycles of 9 bytes - 10000000 keys
+# Keyset 'Cyclic' - 8 cycles of 10 bytes - 10000000 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 48 - Collision Rate for Keyset 'Cyclic' - 8 cycles of 10 bytes - 10000000 keys
+ok 49 - Distribution Bias Check for Keyset 'Cyclic' - 8 cycles of 10 bytes - 10000000 keys
+# Keyset 'Cyclic' - 8 cycles of 11 bytes - 10000000 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 50 - Collision Rate for Keyset 'Cyclic' - 8 cycles of 11 bytes - 10000000 keys
+ok 51 - Distribution Bias Check for Keyset 'Cyclic' - 8 cycles of 11 bytes - 10000000 keys
+# Keyset 'Cyclic' - 8 cycles of 12 bytes - 10000000 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 52 - Collision Rate for Keyset 'Cyclic' - 8 cycles of 12 bytes - 10000000 keys
+ok 53 - Distribution Bias Check for Keyset 'Cyclic' - 8 cycles of 12 bytes - 10000000 keys
+ok 54 - Keyset 'Cyclic' # pengyhash
+### Keyset 'TwoBytes' Tests ###
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 55 - Collision Rate for Keyset 'TwoBytes' - up-to-4-byte keys, 652545 total keys
+ok 56 - Distribution Bias Check for Keyset 'TwoBytes' - up-to-4-byte keys, 652545 total keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 57 - Collision Rate for Keyset 'TwoBytes' - up-to-8-byte keys, 5471025 total keys
+ok 58 - Distribution Bias Check for Keyset 'TwoBytes' - up-to-8-byte keys, 5471025 total keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 59 - Collision Rate for Keyset 'TwoBytes' - up-to-12-byte keys, 18616785 total keys
+ok 60 - Distribution Bias Check for Keyset 'TwoBytes' - up-to-12-byte keys, 18616785 total keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 61 - Collision Rate for Keyset 'TwoBytes' - up-to-16-byte keys, 44251425 total keys
+ok 62 - Distribution Bias Check for Keyset 'TwoBytes' - up-to-16-byte keys, 44251425 total keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 63 - Collision Rate for Keyset 'TwoBytes' - up-to-20-byte keys, 86536545 total keys
+ok 64 - Distribution Bias Check for Keyset 'TwoBytes' - up-to-20-byte keys, 86536545 total keys
+ok 65 - Keyset 'TwoBytes' # pengyhash
+### Keyset 'Sparse' Tests ###
+# Keyset 'Sparse' - 4096-bit keys with up to 2 bits set - 8390657 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 66 - Collision Rate for Keyset 'Sparse' - 4096-bit keys with up to 2 bits set
+ok 67 - Distribution Bias Check for Keyset 'Sparse' - 4096-bit keys with up to 2 bits set
+# Keyset 'Sparse' - 2048-bit keys with up to 2 bits set - 2098177 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 68 - Collision Rate for Keyset 'Sparse' - 2048-bit keys with up to 2 bits set
+ok 69 - Distribution Bias Check for Keyset 'Sparse' - 2048-bit keys with up to 2 bits set
+# Keyset 'Sparse' - 1024-bit keys with up to 2 bits set - 524801 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 70 - Collision Rate for Keyset 'Sparse' - 1024-bit keys with up to 2 bits set
+ok 71 - Distribution Bias Check for Keyset 'Sparse' - 1024-bit keys with up to 2 bits set
+# Keyset 'Sparse' - 512-bit keys with up to 2 bits set - 131329 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 72 - Collision Rate for Keyset 'Sparse' - 512-bit keys with up to 2 bits set
+ok 73 - Distribution Bias Check for Keyset 'Sparse' - 512-bit keys with up to 2 bits set
+# Keyset 'Sparse' - 256-bit keys with up to 3 bits set - 2796417 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 74 - Collision Rate for Keyset 'Sparse' - 256-bit keys with up to 3 bits set
+ok 75 - Distribution Bias Check for Keyset 'Sparse' - 256-bit keys with up to 3 bits set
+# Keyset 'Sparse' - 32-bit keys with up to 6 bits set - 1149017 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 76 - Collision Rate for Keyset 'Sparse' - 32-bit keys with up to 6 bits set
+ok 77 - Distribution Bias Check for Keyset 'Sparse' - 32-bit keys with up to 6 bits set
+# Keyset 'Sparse' - 40-bit keys with up to 6 bits set - 4598479 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 78 - Collision Rate for Keyset 'Sparse' - 40-bit keys with up to 6 bits set
+ok 79 - Distribution Bias Check for Keyset 'Sparse' - 40-bit keys with up to 6 bits set
+# Keyset 'Sparse' - 48-bit keys with up to 5 bits set - 1925357 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 80 - Collision Rate for Keyset 'Sparse' - 48-bit keys with up to 5 bits set
+ok 81 - Distribution Bias Check for Keyset 'Sparse' - 48-bit keys with up to 5 bits set
+# Keyset 'Sparse' - 56-bit keys with up to 5 bits set - 4216423 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 82 - Collision Rate for Keyset 'Sparse' - 56-bit keys with up to 5 bits set
+ok 83 - Distribution Bias Check for Keyset 'Sparse' - 56-bit keys with up to 5 bits set
+# Keyset 'Sparse' - 64-bit keys with up to 5 bits set - 8303633 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 84 - Collision Rate for Keyset 'Sparse' - 64-bit keys with up to 5 bits set
+ok 85 - Distribution Bias Check for Keyset 'Sparse' - 64-bit keys with up to 5 bits set
+# Keyset 'Sparse' - 96-bit keys with up to 4 bits set - 3469497 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 86 - Collision Rate for Keyset 'Sparse' - 96-bit keys with up to 4 bits set
+ok 87 - Distribution Bias Check for Keyset 'Sparse' - 96-bit keys with up to 4 bits set
+ok 88 - Keyset 'Sparse' # pengyhash
+### Keyset 'Crc-MultiCollision' Tests ###
+# Keyset 'Crc(a)-MultiCollision' - 1048575 x 16 block keys - 128-bytes long - 10 seeds
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 89 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 1 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 90 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 2 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 91 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 3 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 92 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 4 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 93 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 5 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 94 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 6 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 95 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 7 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 96 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 8 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 97 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 9 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 98 - Collision Rate for Keyset 'Crc(a)-MultiCollision' - seed 10 # pengyhash
+# Keyset 'Crc(b)-MultiCollision' - 1048575 x 16 block keys - 128-bytes long - 10 seeds
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 99 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 1 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 100 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 2 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 101 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 3 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 102 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 4 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 103 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 5 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 104 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 6 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 105 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 7 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 106 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 8 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 107 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 9 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 108 - Collision Rate for Keyset 'Crc(b)-MultiCollision' - seed 10 # pengyhash
+### Keyset 'Murmur2-MultiCollision' Tests ###
+# Keyset 'Murmur2-MultiCollision' - 1048575 x 16 block keys - 128-bytes long - 10 seeds
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 109 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 1 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 110 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 2 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 111 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 3 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 112 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 4 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 113 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 5 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 114 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 6 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 115 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 7 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 116 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 8 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 117 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 9 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 118 - Collision Rate for Keyset 'Murmur2-MultiCollision' - seed 10 # pengyhash
+### Keyset 'Murmur3A-MultiCollision' Tests ###
+# Keyset 'Murmur3A-MultiCollision' - 1048575 x 16 block keys - 128-bytes long - 10 seeds
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 119 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 1 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 120 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 2 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 121 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 3 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 122 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 4 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 123 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 5 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 124 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 6 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 125 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 7 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 126 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 8 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 127 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 9 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 128 - Collision Rate for Keyset 'Murmur3A-MultiCollision' - seed 10 # pengyhash
+### Keyset 'Murmur3F-MultiCollision' Tests ###
+# Keyset 'Murmur3F-MultiCollision' - 1048575 x 16 block keys - 512-bytes long - 10 seeds
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 129 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 1 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 130 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 2 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 131 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 3 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 132 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 4 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 133 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 5 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 134 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 6 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 135 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 7 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 136 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 8 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 137 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 9 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 138 - Collision Rate for Keyset 'Murmur3F-MultiCollision' - seed 10 # pengyhash
+### Keyset 'City64-MultiCollision' Tests ###
+# Keyset 'City64-MultiCollision' - 10 x 2 block keys - 16-bytes long - 10 seeds
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 139 - Collision Rate for Keyset 'City64-MultiCollision' - seed 1 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 140 - Collision Rate for Keyset 'City64-MultiCollision' - seed 2 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 141 - Collision Rate for Keyset 'City64-MultiCollision' - seed 3 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 142 - Collision Rate for Keyset 'City64-MultiCollision' - seed 4 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 143 - Collision Rate for Keyset 'City64-MultiCollision' - seed 5 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 144 - Collision Rate for Keyset 'City64-MultiCollision' - seed 6 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 145 - Collision Rate for Keyset 'City64-MultiCollision' - seed 7 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 146 - Collision Rate for Keyset 'City64-MultiCollision' - seed 8 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 147 - Collision Rate for Keyset 'City64-MultiCollision' - seed 9 # pengyhash
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 148 - Collision Rate for Keyset 'City64-MultiCollision' - seed 10 # pengyhash
+### Keyset 'Combination Lowbits' Tests ###
+# Keyset 'Combination' - up to 8 blocks from a set of 8 - 19173960 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 149 - Collision Rate for Keyset 'Combination Lowbits'
+ok 150 - Distribution Bias Check for Keyset 'Combination Lowbits'
+ok 151 - Keyset 'Combination Lowbits' # pengyhash
+### Keyset 'Combination Highbits' Tests ###
+# Keyset 'Combination' - up to 8 blocks from a set of 8 - 19173960 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 152 - Collision Rate for Keyset 'Combination Highbits'
+ok 153 - Distribution Bias Check for Keyset 'Combination Highbits'
+ok 154 - Keyset 'Combination Highbits' # pengyhash
+### Keyset 'Combination Highbits2' Tests ###
+# Keyset 'Combination' - up to 8 blocks from a set of 8 - 19173960 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 155 - Collision Rate for Keyset 'Combination Highbits2'
+ok 156 - Distribution Bias Check for Keyset 'Combination Highbits2'
+ok 157 - Keyset 'Combination Highbits2' # pengyhash
+### Keyset 'Combination HiBit-Null' Tests ###
+# Keyset 'Combination' - up to 20 blocks from a set of 2 - 2097150 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 158 - Collision Rate for Keyset 'Combination HiBit-Null'
+ok 159 - Distribution Bias Check for Keyset 'Combination HiBit-Null'
+ok 160 - Keyset 'Combination HiBit-Null' # pengyhash
+### Keyset 'Combination LowBit-Null' Tests ###
+# Keyset 'Combination' - up to 20 blocks from a set of 2 - 2097150 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 161 - Collision Rate for Keyset 'Combination LowBit-Null'
+ok 162 - Distribution Bias Check for Keyset 'Combination LowBit-Null'
+ok 163 - Keyset 'Combination LowBit-Null' # pengyhash
+### Keyset 'Combination Hi-Lo' Tests ###
+# Keyset 'Combination' - up to 6 blocks from a set of 15 - 12204240 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 164 - Collision Rate for Keyset 'Combination Hi-Lo'
+ok 165 - Distribution Bias Check for Keyset 'Combination Hi-Lo'
+ok 166 - Keyset 'Combination Hi-Lo' # pengyhash
+### Keyset 'Text' Tests ###
+# Keyset 'Text' - keys of form "Foo[XXXX]Bar" - 14776336 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 167 - Collision Rate for Keyset 'Text' - keys of form "Foo[XXXX]Bar" - 14776336 keys
+ok 168 - Distribution Bias Check for Keyset 'Text' - keys of form "Foo[XXXX]Bar" - 14776336 keys
+# Keyset 'Text' - keys of form "FooBar[XXXX]" - 14776336 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 169 - Collision Rate for Keyset 'Text' - keys of form "FooBar[XXXX]" - 14776336 keys
+ok 170 - Distribution Bias Check for Keyset 'Text' - keys of form "FooBar[XXXX]" - 14776336 keys
+# Keyset 'Text' - keys of form "[XXXX]FooBar" - 14776336 keys
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 171 - Collision Rate for Keyset 'Text' - keys of form "[XXXX]FooBar" - 14776336 keys
+ok 172 - Distribution Bias Check for Keyset 'Text' - keys of form "[XXXX]FooBar" - 14776336 keys
+ok 173 - Keyset 'Text' # pengyhash
+### Keyset 'Zeroes' Tests ###
+# Keyset 'Zeroes' - 262144 keys, zero seed
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 174 - Collision Rate for Keyset 'Zeroes' - 262144 keys, zero seed
+ok 175 - Distribution Bias Check for Keyset 'Zeroes' - 262144 keys, zero seed
+# Keyset 'Zeroes' - 262144 keys, nonzero seed
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 176 - Collision Rate for Keyset 'Zeroes' - 262144 keys, nonzero seed
+ok 177 - Distribution Bias Check for Keyset 'Zeroes' - 262144 keys, nonzero seed
+ok 178 - Keyset 'Zeroes' # pengyhash
+### Keyset 'Seed' Tests ###
+# Keyset 'Seed' - 2000000 seeds, Key "The quick brown fox "...
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 179 - Collision Rate for Keyset 'Seed' - 2000000 seeds, Key "The quick brown fox "...
+ok 180 - Distribution Bias Check for Keyset 'Seed' - 2000000 seeds, Key "The quick brown fox "...
+# Keyset 'Seed' - 2000000 seeds, Key ""
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 181 - Collision Rate for Keyset 'Seed' - 2000000 seeds, Key ""
+ok 182 - Distribution Bias Check for Keyset 'Seed' - 2000000 seeds, Key ""
+# Keyset 'Seed' - 2000000 seeds, Key "00101100110101101"
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 183 - Collision Rate for Keyset 'Seed' - 2000000 seeds, Key "00101100110101101"
+ok 184 - Distribution Bias Check for Keyset 'Seed' - 2000000 seeds, Key "00101100110101101"
+# Keyset 'Seed' - 2000000 seeds, Key "abcbcddbdebdcaaabaaa"...
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 185 - Collision Rate for Keyset 'Seed' - 2000000 seeds, Key "abcbcddbdebdcaaabaaa"...
+ok 186 - Distribution Bias Check for Keyset 'Seed' - 2000000 seeds, Key "abcbcddbdebdcaaabaaa"...
+ok 187 - Keyset 'Seed' # pengyhash
+### Keyset 'Effs' Tests ###
+# Keyset 'Effs' - 262144 keys, zero seed
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 188 - Collision Rate for Keyset 'Effs' - 262144 keys, zero seed
+ok 189 - Distribution Bias Check for Keyset 'Effs' - 262144 keys, zero seed
+# Keyset 'Effs' - 262144 keys, nonzero seed
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 190 - Collision Rate for Keyset 'Effs' - 262144 keys, nonzero seed
+ok 191 - Distribution Bias Check for Keyset 'Effs' - 262144 keys, nonzero seed
+ok 192 - Keyset 'Effs' # pengyhash
+### Keyset 'Words' Tests ###
+# Hashed 704811 keys from 234937 words from file '/usr/share/dict/words'
+# Testing collisions   - Expected     0.00, actual        0 ( 0.00x) - passed
+ok 193 - Collision Rate for Keyset 'Words'
+ok 194 - Distribution Bias Check for Keyset 'Words'
+ok 195 - all tests passed # pengyhash
+1..195
+# All Tests Passed. pengyhash passed all 195 tests run.
+# Testing took 1367.948550 seconds
+# This is SMHasher version v1.3-demerphq-43-g0762887-dirty - built on Nov 29 2022.

@@ -2,8 +2,8 @@
 #define _PENGYHASH_H
 
 #include <stdint.h>
-#include <string.h>
+#include <stddef.h>
 
-uint64_t pengyhash(const void *p, size_t size, uint32_t seed);
+uint64_t pengyhash(const void *p, size_t size, uint64_t seed);
 
 #endif
